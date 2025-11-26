@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo - Images & Embedding Media</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    figure {
+      border: 1px solid #ddd;
+      padding: 8px;
+      max-width: 300px;
+      background: #fafafa;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .preview-box {
+      margin: 16px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background: #f9fafb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Demo: Images & Embedding Media</h1>
+
+  <h2>1. img</h2>
+  <div class="preview-box">
+    <img src="https://via.placeholder.com/300x150" alt="Placeholder image" />
+  </div>
+
+  <h2>2. figure + figcaption</h2>
+  <div class="preview-box">
+    <figure>
+      <img src="https://via.placeholder.com/300x150" alt="Landscape placeholder" />
+      <figcaption>Example image with a caption using &lt;figure&gt; and &lt;figcaption&gt;.</figcaption>
+    </figure>
+  </div>
+
+  <h2>3. audio</h2>
+  <div class="preview-box">
+    <!-- file tidak harus ada, ini hanya untuk demo UI -->
+    <audio controls>
+      <source src="media/sample-audio.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <h2>4. video</h2>
+  <div class="preview-box">
+    <!-- file tidak harus ada, ini hanya untuk demo UI -->
+    <video width="320" height="180" controls poster="https://via.placeholder.com/320x180">
+      <source src="media/sample-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <h2>5. iframe</h2>
+  <div class="preview-box">
+    <!-- contoh embed YouTube -->
+    <iframe
+      width="320"
+      height="180"
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</body>
+</html>

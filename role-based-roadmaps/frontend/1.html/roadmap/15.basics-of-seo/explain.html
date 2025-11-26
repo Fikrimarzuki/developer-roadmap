@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    lang="en"
+    --------------------------------
+    - Membantu search engine & screen reader tahu bahasa halaman.
+  -->
+
+  <meta charset="UTF-8">
+  <!--
+    meta charset
+    --------------------------------
+    - Pastikan teks (termasuk bahasa Indonesia & emoji) tampil dengan benar.
+  -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    viewport
+    --------------------------------
+    - Penting untuk mobile-friendly.
+    - Mobile-friendliness adalah faktor ranking SEO.
+  -->
+
+  <title>Basic SEO Example | My Demo Page</title>
+  <!--
+    <title>
+    --------------------------------
+    - Salah satu sinyal SEO terkuat.
+    - Tampil di tab browser & judul di hasil pencarian.
+    - Usahakan:
+        * Mengandung keyword utama.
+        * Tetap natural dan bisa dibaca manusia.
+  -->
+
+  <meta
+    name="description"
+    content="Contoh halaman HTML yang sudah dioptimasi untuk basic SEO: title, meta description, heading structure, dan alt text."
+  >
+  <!--
+    meta name="description"
+    --------------------------------
+    - Ringkasan singkat isi halaman (biasanya 120–160 karakter).
+    - Sering dipakai Google sebagai snippet di hasil pencarian.
+    - Tidak langsung untuk ranking, tapi pengaruh ke CTR (click-through rate).
+  -->
+
+  <meta name="robots" content="index, follow">
+  <!--
+    meta name="robots"
+    --------------------------------
+    - Mengontrol apakah halaman boleh di-index dan link diikuti.
+    - Umum:
+        index, follow     -> index halaman dan ikuti semua link (default).
+        noindex, nofollow -> jangan tampilkan halaman di hasil pencarian.
+  -->
+
+  <link rel="canonical" href="https://example.com/basic-seo-example">
+  <!--
+    canonical
+    --------------------------------
+    - Digunakan kalau halaman bisa diakses lewat beberapa URL yang berbeda.
+    - Membantu search engine tahu "versi utama" dari konten tersebut.
+  -->
+
+  <!-- Open Graph untuk sosial media (bonus, masih relevan untuk visibility) -->
+  <meta property="og:title" content="Basic SEO Example | My Demo Page">
+  <meta
+    property="og:description"
+    content="Contoh halaman HTML dengan basic SEO: title, description, headings, dan alt text."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/basic-seo-example">
+  <meta
+    property="og:image"
+    content="https://example.com/images/basic-seo-cover.jpg"
+  >
+</head>
+<body>
+
+  <!--
+    HEADING STRUCTURE
+    --------------------------------
+    - Gunakan hanya satu <h1> per halaman untuk topik utama.
+    - <h2>, <h3>, dst untuk sub-topik.
+    - Bantu mesin pencari memahami hierarki konten.
+  -->
+  <h1>Basic SEO Example</h1>
+
+  <h2>What is SEO?</h2>
+  <p>SEO (Search Engine Optimization) adalah cara mengoptimasi halaman agar mudah ditemukan di mesin pencari.</p>
+
+  <h2>Key On-page Elements</h2>
+  <h3>1. Title & Meta Description</h3>
+  <p>Gunakan title yang jelas dan meta description yang menarik klik.</p>
+
+  <h3>2. Headings & Content</h3>
+  <p>Tulis konten yang relevan dan gunakan heading untuk membagi topik.</p>
+
+
+
+  <!--
+    SEMANTIC TAGS & CONTENT
+    --------------------------------
+    - header, nav, main, article, footer memberikan makna tambahan.
+    - Membantu mesin pencari dan screen reader memahami struktur.
+  -->
+  <header>
+    <p>This is the page header area.</p>
+  </header>
+
+  <main>
+    <article>
+      <h2>Why Semantic HTML Helps SEO</h2>
+      <p>Semantic tags make the structure of your page more understandable.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>Footer area with contact info or links.</p>
+  </footer>
+
+
+
+  <!--
+    ALT TEXT ON IMAGES
+    --------------------------------
+    - alt wajib di setiap <img>.
+    - Mesin pencari menggunakan alt untuk memahami isi gambar.
+    - Jangan keyword stuffing; cukup deskripsikan apa yang ada di gambar.
+  -->
+  <img
+    src="https://via.placeholder.com/600x300"
+    alt="Diagram simple yang menjelaskan alur kerja SEO on-page"
+  >
+
+
+
+  <!--
+    LINK TEXT (ANCHOR TEXT)
+    --------------------------------
+    - Gunakan teks link yang deskriptif, bukan hanya "klik di sini".
+    - Anchor text membantu mesin pencari memahami isi halaman tujuan.
+  -->
+  <p>
+    Pelajari lebih lanjut di
+    <a href="https://example.com/seo-guide">panduan lengkap SEO untuk pemula</a>.
+  </p>
+
+
+
+  <!--
+    PERFORMANCE & MOBILE (Secara singkat)
+    --------------------------------
+    - Faktor penting lain untuk SEO modern:
+        * Page speed (gunakan gambar terkompresi, minimalkan JS/CSS berat).
+        * Mobile-friendly (responsive layout).
+    - Ini tidak dilihat langsung di HTML saja, tapi penting untuk dipahami.
+  -->
+
+</body>
+</html>

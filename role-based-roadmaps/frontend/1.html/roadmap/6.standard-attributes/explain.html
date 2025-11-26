@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain - id, class, data attributes, style</title>
+</head>
+
+<body>
+
+  <!-- 
+    id attribute
+    -------------------------
+    - Used to uniquely identify ONE element.
+    - Must NOT be duplicated.
+    - Common use cases:
+        * JavaScript targeting (document.getElementById)
+        * Anchor links (#section)
+        * CSS targeting (#idName)
+  -->
+  <p id="unique-id-example">
+    This element is an example of using an id.
+  </p>
+
+
+  <!-- 
+    class attribute
+    -------------------------
+    - Used to group multiple elements.
+    - Can be repeated and shared by many elements.
+    - Common use cases:
+        * CSS styling (.className)
+        * Reusable component patterns
+        * JS selection (document.querySelectorAll(".class"))
+  -->
+  <div class="box-example">
+    This element uses a class named "box-example".
+  </div>
+
+
+  <!-- 
+    data-* attributes
+    -------------------------
+    - Custom attributes that start with "data-"
+    - Used for storing extra information on HTML elements.
+    - Useful for JS because they are accessible via:
+        element.dataset.attributeName
+    - Examples:
+        data-id="10"
+        data-status="active"
+  -->
+  <button data-item-id="10" data-status="active">
+    Button using data attributes
+  </button>
+
+
+  <!-- 
+    style attribute
+    -------------------------
+    - Inline CSS applied directly to the element.
+    - Highest priority compared to external or internal CSS.
+    - Not recommended for large projects, but useful for quick demos.
+    - Format:
+        style="property: value;"
+  -->
+  <p style="color: blue; font-size: 18px;">
+    This paragraph uses inline style.
+  </p>
+
+</body>
+</html>

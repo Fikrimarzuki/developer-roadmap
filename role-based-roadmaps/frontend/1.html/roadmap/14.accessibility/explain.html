@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    lang="en"
+    --------------------------------
+    - Memberi tahu screen reader bahasa utama halaman ini.
+    - Penting untuk pelafalan yang benar.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain - Accessibility Basics</title>
+</head>
+<body>
+
+  <!--
+    HEADING STRUCTURE
+    ==================================
+    - Gunakan <h1> sekali untuk judul utama halaman.
+    - <h2>, <h3>, dst untuk sub-judul secara berurutan.
+    - Membantu screen reader dan outline halaman.
+  -->
+  <h1>Accessibility Basics</h1>
+  <h2>Images</h2>
+  <h2>Forms</h2>
+
+
+
+  <!--
+    ACCESSIBLE IMAGES (alt text)
+    ==================================
+    - Semua <img> butuh atribut alt.
+    - alt = teks yang menjelaskan makna gambar.
+    - Jika gambar hanya dekorasi, gunakan alt="" dan biasanya aria-hidden="true".
+  -->
+  <!-- Gambar informatif -->
+  <img
+    src="https://via.placeholder.com/200x120"
+    alt="Profile photo of a smiling person"
+  >
+
+  <!-- Gambar dekoratif -->
+  <img
+    src="https://via.placeholder.com/80x80"
+    alt=""
+    aria-hidden="true"
+  >
+
+
+
+  <!--
+    LABELS & INPUTS
+    ==================================
+    - Selalu hubungkan <label> dengan <input>.
+    - "for" di label harus sama dengan "id" di input.
+    - Keuntungan:
+        * Klik label akan fokus ke input.
+        * Screen reader mengumumkan nama field dengan benar.
+  -->
+  <form>
+    <label for="email">Email address</label>
+    <input id="email" name="email" type="email" required>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required>
+  </form>
+
+
+
+  <!--
+    LANDMARK ROLES / TAGS
+    ==================================
+    - <nav>, <main>, <header>, <footer> adalah semantic landmarks.
+    - Membantu user screen reader lompat ke bagian penting halaman.
+    - nav: area navigasi
+    - main: konten utama halaman
+  -->
+  <nav aria-label="Main navigation">
+    <a href="#content">Skip to content</a>
+  </nav>
+
+  <main id="content">
+    <p>Ini adalah konten utama halaman.</p>
+  </main>
+
+
+
+  <!--
+    BUTTON VS DIV
+    ==================================
+    - Untuk aksi (klik, submit, dsb) gunakan <button> daripada <div>.
+    - <button>:
+        * Fokus dengan keyboard (Tab).
+        * Bisa di-klik dengan Enter/Space.
+        * Screen reader tahu ini sebuah tombol.
+  -->
+  <!-- Benar -->
+  <button type="button">Real button</button>
+
+  <!-- Salah: hanya contoh, tidak direkomendasikan -->
+  <div onclick="alert('clicked')" style="cursor:pointer;">
+    Div that looks like a button (not accessible)
+  </div>
+
+
+
+  <!--
+    ARIA: role="alert"
+    ==================================
+    - Digunakan untuk pesan penting (error, warning).
+    - Screen reader akan langsung membacakan konten ketika muncul.
+  -->
+  <div role="alert">
+    Error: your form could not be submitted.
+  </div>
+
+
+
+  <!--
+    ARIA-LABEL & TABINDEX
+    ==================================
+    - aria-label:
+        * Memberikan nama yang dapat dibaca screen reader untuk elemen
+          yang tidak punya teks jelas (misalnya icon-only button).
+    - tabindex="0":
+        * Membuat elemen fokus-able dengan Tab, mengikuti urutan normal.
+    - role="button":
+        * Membantu screen reader tahu bahwa elemen ini bertindak sebagai tombol.
+  -->
+  <span
+    role="button"
+    tabindex="0"
+    aria-label="Open notifications"
+  >
+    🔔
+  </span>
+
+
+
+  <!--
+    FOCUS STYLES
+    ==================================
+    - Jangan hilangkan outline default tanpa mengganti dengan yang jelas.
+    - User keyboard mengandalkan focus ring untuk tahu posisi fokus.
+    - Biasanya diatur di CSS, contoh:
+        button:focus-visible {
+          outline: 3px solid orange;
+        }
+  -->
+
+</body>
+</html>

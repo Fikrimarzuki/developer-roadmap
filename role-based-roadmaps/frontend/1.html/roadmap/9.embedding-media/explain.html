@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain - Images & Embedding Media</title>
+</head>
+<body>
+
+  <!--
+    <img>
+    --------------------------------
+    - Used to embed images.
+    - Common attributes:
+        src   : image URL or path
+        alt   : alternative text (important for accessibility/SEO)
+        width : display width (optional)
+        height: display height (optional)
+  -->
+  <img src="https://via.placeholder.com/200x100" alt="Example image" />
+
+
+
+  <!--
+    <figure> and <figcaption>
+    --------------------------------
+    - <figure> groups media content (image, diagram, code snippet, etc.)
+    - <figcaption> provides a caption/description for that figure.
+    - Good for semantic HTML when an image needs a caption.
+  -->
+  <figure>
+    <img src="https://via.placeholder.com/200x100" alt="Example with caption">
+    <figcaption>This is a caption describing the image.</figcaption>
+  </figure>
+
+
+
+  <!--
+    <audio>
+    --------------------------------
+    - Used to embed audio.
+    - Usually used with the "controls" attribute to show play/pause UI.
+    - <source> is used inside to define the audio file and type.
+  -->
+  <audio controls>
+    <source src="media/sample-audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+
+  <!--
+    <video>
+    --------------------------------
+    - Used to embed video.
+    - Common attributes:
+        controls : show play/pause UI
+        width/height : display size
+        poster : placeholder image before video plays
+    - <source> defines the video file and MIME type.
+  -->
+  <video width="320" height="180" controls poster="https://via.placeholder.com/320x180">
+    <source src="media/sample-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+
+
+  <!--
+    <iframe>
+    --------------------------------
+    - Inline frame: embeds another HTML page inside the current page.
+    - Commonly used for:
+        * Embedding YouTube videos
+        * Maps
+        * External widgets
+    - Security note: only embed from trusted sources.
+  -->
+  <iframe
+    width="320"
+    height="180"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+</body>
+</html>

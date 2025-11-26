@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain - Using Forms</title>
+</head>
+<body>
+
+  <!--
+    <form>
+    --------------------------------
+    - Container untuk input form.
+    - Atribut penting:
+        action : URL yang menerima data form (server endpoint)
+        method : HTTP method (GET atau POST)
+    - Saat user submit, browser mengirimkan nilai input di dalam <form>.
+  -->
+  <form action="#" method="post">
+
+    <!--
+      <label>
+      --------------------------------
+      - Menghubungkan teks label dengan input tertentu.
+      - Atribut "for" harus sama dengan atribut "id" pada input.
+      - Klik label akan otomatis fokus ke input terkait.
+    -->
+    <label for="name">Name</label>
+
+    <!--
+      <input>
+      --------------------------------
+      - Elemen input serbaguna.
+      - type menentukan jenis input (text, email, password, file, dll).
+      - name menentukan nama field yang dikirim ke server.
+      - placeholder memberikan hint di dalam input.
+    -->
+    <input id="name" name="name" type="text" placeholder="Enter your name">
+
+
+    <!--
+      Contoh input lain: email, password, checkbox
+    -->
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com">
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+
+    <!--
+      Checkbox:
+      - nilai akan dikirim hanya jika dicentang.
+    -->
+    <label>
+      <input type="checkbox" name="agree">
+      I agree to the terms
+    </label>
+
+  </form>
+
+
+
+  <!--
+    File Uploads - <input type="file">
+    --------------------------------
+    - Membuka file picker untuk memilih file dari komputer/user.
+    - Form yang mengirim file biasanya butuh:
+        <form enctype="multipart/form-data">
+    - Di server, file dibaca dari request (misalnya req.files di Node, IFormFile di .NET).
+  -->
+  <form action="#" method="post" enctype="multipart/form-data">
+    <label for="resume">Upload Resume</label>
+    <input id="resume" name="resume" type="file">
+  </form>
+
+
+
+  <!--
+    Form Validation (HTML5)
+    --------------------------------
+    - Browser bisa melakukan validasi sederhana tanpa JavaScript.
+    - Atribut penting:
+        required : field tidak boleh kosong
+        type     : menentukan format dasar (email, number, url, dll)
+        min/max  : batas angka minimum & maksimum
+        pattern  : regex sederhana untuk mencocokkan input
+        minlength/maxlength : panjang karakter
+  -->
+  <form action="#" method="post">
+
+    <!-- required + type=email -->
+    <label for="email-required">Email (required)</label>
+    <input
+      id="email-required"
+      name="email"
+      type="email"
+      required
+    >
+
+    <!-- min + max untuk number -->
+    <label for="age">Age (18–60)</label>
+    <input
+      id="age"
+      name="age"
+      type="number"
+      min="18"
+      max="60"
+      required
+    >
+
+    <!-- pattern untuk custom rule -->
+    <label for="username">Username (letters & numbers only)</label>
+    <input
+      id="username"
+      name="username"
+      type="text"
+      pattern="[A-Za-z0-9]+"
+      title="Only letters and numbers are allowed"
+      required
+    >
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

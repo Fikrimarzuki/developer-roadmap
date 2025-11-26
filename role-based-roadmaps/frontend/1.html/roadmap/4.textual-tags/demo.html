@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML Related Concepts Demo</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <h1>HTML Text Tags – Demo Page</h1>
+  <p>This page is for practicing common HTML text tags and seeing how they look.</p>
+
+  <hr />
+
+  <h2>1. Headings (h1 to h6)</h2>
+  <p>Headings show structure and importance of content:</p>
+  <h1>Heading h1 – Most important</h1>
+  <h2>Heading h2</h2>
+  <h3>Heading h3</h3>
+  <h4>Heading h4</h4>
+  <h5>Heading h5</h5>
+  <h6>Heading h6 – Least important</h6>
+
+  <hr />
+
+  <h2>2. Paragraph (&lt;p&gt;), Line Break (&lt;br&gt;), Horizontal Rule (&lt;hr&gt;)</h2>
+  <p>
+    Paragraphs are created with the <code>&lt;p&gt;</code> tag.  
+    Browsers automatically add some spacing before and after a paragraph.
+  </p>
+
+  <p>
+    Sometimes you want a line break<br />
+    inside the same paragraph without starting a new paragraph.  
+    That’s what the <code>&lt;br&gt;</code> tag does.
+  </p>
+
+  <p>
+    The line below is made with <code>&lt;hr&gt;</code>, which creates a horizontal separator:
+  </p>
+  <hr />
+
+  <h2>3. Bold, Strong, Italic, Emphasis, Mark</h2>
+  <p>
+    <b>&lt;b&gt; makes text bold</b> but doesn’t add meaning; it’s just visual.
+  </p>
+  <p>
+    <strong>&lt;strong&gt; makes text bold with semantic importance</strong>,
+    meaning “this is important”.
+  </p>
+  <p>
+    <i>&lt;i&gt; makes text italic</i> but is usually just visual styling.
+  </p>
+  <p>
+    <em>&lt;em&gt; emphasizes text</em> and is usually read with stress by screen readers.
+  </p>
+  <p>
+    You can also <mark>highlight text with &lt;mark&gt;</mark> to show something important or selected.
+  </p>
+
+  <hr />
+
+  <h2>4. Subscript (&lt;sub&gt;) and Superscript (&lt;sup&gt;)</h2>
+  <p>
+    Subscript is text that sits slightly <sub>below</sub> the baseline.
+    <br />
+    Example: H<sub>2</sub>O
+  </p>
+  <p>
+    Superscript is text that sits slightly <sup>above</sup> the baseline.
+    <br />
+    Example: x<sup>2</sup> + y<sup>2</sup> = r<sup>2</sup>
+  </p>
+
+  <hr />
+
+  <h2>5. Preformatted Text (&lt;pre&gt;)</h2>
+  <p>
+    The <code>&lt;pre&gt;</code> tag keeps spaces, line breaks, and uses a monospace font.
+    Useful for code blocks or text that must keep its formatting:
+  </p>
+
+  <pre>
+Line 1: this   has   extra   spaces
+Line 2:    and indentation
+Line 3: &lt;pre&gt; shows text exactly as written.
+  </pre>
+
+  <hr />
+
+  <h2>6. Links (&lt;a&gt;)</h2>
+  <p>
+    Links use the <code>&lt;a&gt;</code> tag with an <code>href</code> attribute:
+  </p>
+  <p>
+    Go to
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+      MDN HTML Documentation
+    </a>
+    (opens in a new tab).
+  </p>
+  <p>
+    You can also link to a section on the same page:
+    <a href="#top-explanation">Jump to top explanation (example below)</a>.
+  </p>
+
+  <hr />
+
+  <!-- Example anchor target for internal link -->
+  <h2 id="top-explanation">Extra Note</h2>
+  <p>
+    In a real project, you combine these tags to create structured, readable, and accessible pages.
+  </p>
+</body>
+</html>

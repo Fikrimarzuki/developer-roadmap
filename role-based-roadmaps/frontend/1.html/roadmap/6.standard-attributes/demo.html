@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo - id, class, data attributes, style</title>
+
+  <style>
+    /* Styling for class example */
+    .card {
+      border: 2px solid #4a90e2;
+      padding: 10px;
+      margin-bottom: 20px;
+      background: #eef6ff;
+    }
+
+    .highlight {
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Demo: id, class, data attributes, style</h1>
+
+  <hr>
+
+  <h2>1. id Example</h2>
+  <p id="unique-text">This paragraph uses an <strong>id</strong> (unique identifier).</p>
+
+  <hr>
+
+  <h2>2. class Example</h2>
+  <div class="card">
+    This box uses a <strong>class</strong> named <code>card</code>.
+  </div>
+
+  <p class="highlight">This text is highlighted using a class.</p>
+
+  <hr>
+
+  <h2>3. Data Attributes Example</h2>
+  <button data-user-id="123" data-role="admin">
+    Click Me (has data attributes)
+  </button>
+
+  <p>
+    Useful for JS:  
+    <code>element.dataset.userId</code> → "123"
+  </p>
+
+  <hr>
+
+  <h2>4. style Attribute Example</h2>
+  <p style="color: red; font-weight: bold;">
+    This text uses the <strong>style</strong> attribute directly in HTML.
+  </p>
+
+</body>
+</html>

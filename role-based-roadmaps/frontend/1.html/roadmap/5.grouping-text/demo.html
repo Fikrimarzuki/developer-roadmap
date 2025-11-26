@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grouping Text: div and span</title>
+
+  <style>
+    /* Just simple styling so you can visually see the difference */
+
+    .box {
+      border: 2px solid #4a90e2;
+      padding: 10px;
+      margin-bottom: 20px;
+      background: #eef6ff;
+    }
+
+    .highlight {
+      background: yellow;
+      padding: 2px 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Grouping Text in HTML</h1>
+  <p>
+    HTML has two main grouping elements:
+    <strong>&lt;div&gt;</strong> (block-level) and
+    <strong>&lt;span&gt;</strong> (inline).
+  </p>
+
+  <hr>
+
+  <!-- div example -->
+  <h2>1. &lt;div&gt; – Block-level Container</h2>
+
+  <div class="box">
+    <p>
+      This is inside a <strong>&lt;div&gt;</strong>.<br>
+      A <strong>div</strong> always starts on a new line and takes full width.
+    </p>
+    <p>You can use div to group multiple elements together.</p>
+  </div>
+
+  <p>Example usage of &lt;div&gt;:</p>
+  <ul>
+    <li>Layout sections</li>
+    <li>Cards or boxes</li>
+    <li>Containers for forms or components</li>
+  </ul>
+
+  <hr>
+
+  <!-- span example -->
+  <h2>2. &lt;span&gt; – Inline Container</h2>
+
+  <p>
+    The <strong>&lt;span&gt;</strong> element is used to
+    <span class="highlight">highlight or style small pieces</span>
+    of text inside a sentence without breaking the line.
+  </p>
+
+  <p>
+    Notice how the <span style="color: red;">span does not create a new line</span>.
+  </p>
+
+  <p>Example usage of &lt;span&gt;:</p>
+  <ul>
+    <li>Highlight words (like a highlighter)</li>
+    <li>Change color of a specific word</li>
+    <li>Wrap short text for styling</li>
+  </ul>
+
+  <hr>
+
+  <!-- summary -->
+  <h2>Summary</h2>
+  <p><strong>&lt;div&gt;</strong> = block-level, creates structure, groups large sections.</p>
+  <p><strong>&lt;span&gt;</strong> = inline-level, groups small pieces of text for styling.</p>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain Lists in HTML</title>
+</head>
+
+<body>
+
+  <!-- 
+    Ordered List (<ol>)
+    -------------------------
+    - Displays a list of items in a numbered order.
+    - Browser numbers items automatically: 1, 2, 3...
+    - Best for steps, rankings, or sequences.
+  -->
+  <ol>
+    <li>Step One</li>
+    <li>Step Two</li>
+  </ol>
+
+
+
+  <!-- 
+    Unordered List (<ul>)
+    -------------------------
+    - Displays a list of items with bullet points.
+    - Best for grouping items without order.
+    - Browsers show bullets (•) by default.
+  -->
+  <ul>
+    <li>Milk</li>
+    <li>Bread</li>
+  </ul>
+
+
+
+  <!-- 
+    Definition List (<dl>, <dt>, <dd>)
+    -------------------------------------
+    - <dl> wraps the whole list.
+    - <dt> = definition term
+    - <dd> = definition description
+    - Used for glossaries, terms, FAQs, or label-description pairs.
+  -->
+  <dl>
+    <dt>HTML</dt>
+    <dd>Markup language for building webpages.</dd>
+
+    <dt>CSS</dt>
+    <dd>Styles and layouts for webpages.</dd>
+  </dl>
+
+
+
+  <!-- 
+    Nested Lists
+    -------------------------
+    - Lists can be placed inside other lists.
+    - Good for categories, menus, outlines, hierarchies.
+    - Nesting can be:
+        * <ul> inside <ul>
+        * <ol> inside <ul>
+        * <ul> inside <ol>
+  -->
+  <ul>
+    <li>Programming Languages
+      <ol>
+        <li>JavaScript</li>
+        <li>Python</li>
+      </ol>
+    </li>
+
+    <li>Databases
+      <ul>
+        <li>MySQL</li>
+        <li>MongoDB</li>
+      </ul>
+    </li>
+  </ul>
+
+</body>
+</html>

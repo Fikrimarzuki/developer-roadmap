@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo - Styling Basics</title>
+
+  <!-- Internal CSS -->
+  <style>
+    /* Internal CSS: berlaku untuk halaman ini saja */
+    .internal-box {
+      background: #e0f2fe;
+      border: 2px solid #0369a1;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .external-box {
+      /* ini akan ditimpa oleh styles.css kalau file itu ada */
+      background: #fef9c3;
+      border: 2px dashed #f59e0b;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+
+  <!-- External CSS (styles.css adalah file terpisah) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h1>Demo: Styling Basics</h1>
+
+  <h2>1. Inline CSS</h2>
+  <p
+    style="
+      color: white;
+      background: #22c55e;
+      padding: 8px 12px;
+      border-radius: 6px;
+    "
+  >
+    Teks ini di-style dengan <strong>Inline CSS</strong> (style langsung di tag).
+  </p>
+
+  <hr />
+
+  <h2>2. Internal CSS (&lt;style&gt; di &lt;head&gt;)</h2>
+  <div class="internal-box">
+    Elemen ini memakai <strong>Internal CSS</strong> lewat class <code>.internal-box</code>.
+  </div>
+
+  <hr />
+
+  <h2>3. External CSS (file .css terpisah)</h2>
+  <div class="external-box">
+    Elemen ini memakai class <code>.external-box</code>.  
+    Kalau kamu buat file <code>styles.css</code>, style dari file itu akan diterapkan di sini.
+  </div>
+
+  <p>
+    Coba buat file <code>styles.css</code> di folder yang sama dan isi seperti ini:
+  </p>
+
+  <pre>
+/* styles.css */
+.external-box {
+  background: #fee2e2;
+  border: 2px solid #dc2626;
+  color: #991b1b;
+}
+  </pre>
+
+</body>
+</html>
