@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo - Including JavaScript</title>
+
+  <!-- Internal JavaScript -->
+  <script>
+    // Internal JS: hanya untuk halaman ini
+    function showInternalMessage() {
+      const el = document.getElementById("internal-message");
+      el.textContent = "Internal JS: button clicked!";
+    }
+  </script>
+
+  <!-- External JavaScript -->
+  <!-- Buat file app.js di folder yang sama -->
+  <script src="app.js" defer></script>
+  <!-- 'defer' = jalankan script setelah HTML selesai di-parse -->
+</head>
+<body>
+  <h1>Demo: Including JavaScript</h1>
+
+  <h2>1. Inline JavaScript</h2>
+  <button onclick="alert('Inline JS: button clicked!')">
+    Click me (inline JS)
+  </button>
+
+  <hr />
+
+  <h2>2. Internal JavaScript (&lt;script&gt; di HTML)</h2>
+  <button onclick="showInternalMessage()">
+    Click me (internal JS)
+  </button>
+  <p id="internal-message"></p>
+
+  <hr />
+
+  <h2>3. External JavaScript (file .js terpisah)</h2>
+  <button id="external-btn">
+    Click me (external JS)
+  </button>
+  <p id="external-message"></p>
+
+  <p>Isi file <code>app.js</code> seperti ini:</p>
+
+  <pre>
+/* app.js */
+document.addEventListener("DOMContentLoaded", () =&gt; {
+  const btn = document.getElementById("external-btn");
+  const msg = document.getElementById("external-message");
+
+  btn.addEventListener("click", () =&gt; {
+    msg.textContent = "External JS: button clicked!";
+  });
+});
+  </pre>
+</body>
+</html>

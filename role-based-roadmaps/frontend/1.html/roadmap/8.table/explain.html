@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain - HTML Table</title>
+</head>
+
+<body>
+
+  <!-- 
+    <table>
+    --------------------------------
+    - Defines a table element.
+    - Contains rows (<tr>) and cells (<th> / <td>).
+  -->
+  <table>
+
+    <!-- 
+      <caption>
+      -------------------------------
+      - Optional.
+      - Gives a title/description for the table.
+      - Normally shown above the table.
+    -->
+    <caption>Example Table Caption</caption>
+
+
+    <!-- 
+      <thead>
+      -------------------------------
+      - Groups the header rows of the table.
+      - Usually contains <tr> with <th> cells.
+      - Helps with semantics and styling.
+    -->
+    <thead>
+      <!-- 
+        <tr> = table row
+        <th> = table header cell (bold + centered by default)
+      -->
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>City</th>
+      </tr>
+    </thead>
+
+
+    <!-- 
+      <tbody>
+      -------------------------------
+      - Groups the main body rows of the table.
+      - Contains multiple <tr> with <td> cells.
+    -->
+    <tbody>
+      <!-- 
+        <td> = table data cell (normal cell)
+      -->
+      <tr>
+        <td>1</td>
+        <td>Ani</td>
+        <td>Jakarta</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Budi</td>
+        <td>Bandung</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+
+
+  <!-- 
+    colspan and rowspan (optional advanced part)
+    ----------------------------------------------
+    - colspan="N": cell spans N columns.
+    - rowspan="N": cell spans N rows.
+  -->
+  <table>
+    <thead>
+      <tr>
+        <th rowspan="2">Name</th>
+        <th colspan="2">Scores</th>
+      </tr>
+      <tr>
+        <th>Math</th>
+        <th>English</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ani</td>
+        <td>90</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Budi</td>
+        <td>80</td>
+        <td>88</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

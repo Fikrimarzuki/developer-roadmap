@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo - Using Forms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .field {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"] {
+      padding: 6px 8px;
+      width: 100%;
+      max-width: 320px;
+      box-sizing: border-box;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    hr {
+      margin: 24px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Demo: Using Forms</h1>
+
+  <h2>1. Labels and Inputs</h2>
+
+  <form>
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Enter your name" />
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com" />
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="••••••••" />
+    </div>
+
+    <div class="field">
+      <label>
+        <input type="checkbox" /> I agree to the terms
+      </label>
+    </div>
+  </form>
+
+  <hr>
+
+  <h2>2. File Uploads</h2>
+
+  <form>
+    <div class="field">
+      <label for="avatar">Upload profile picture</label>
+      <input id="avatar" type="file" />
+      <p class="note">Accepts image files from your computer.</p>
+    </div>
+  </form>
+
+  <hr>
+
+  <h2>3. Form Validation (HTML5)</h2>
+
+  <form>
+    <div class="field">
+      <label for="email-required">Email (required)</label>
+      <input
+        id="email-required"
+        type="email"
+        placeholder="you@example.com"
+        required
+      />
+      <p class="note">Try submitting empty to see browser validation.</p>
+    </div>
+
+    <div class="field">
+      <label for="age">Age (18–60)</label>
+      <input
+        id="age"
+        type="number"
+        min="18"
+        max="60"
+        placeholder="18–60"
+        required
+      />
+    </div>
+
+    <div class="field">
+      <label for="username">Username (letters &amp; numbers only)</label>
+      <input
+        id="username"
+        type="text"
+        pattern="[A-Za-z0-9]+"
+        title="Only letters and numbers are allowed"
+        required
+      />
+    </div>
+
+    <button type="submit">Submit Form</button>
+  </form>
+
+</body>
+</html>

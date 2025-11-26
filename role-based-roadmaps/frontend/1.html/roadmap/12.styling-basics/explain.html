@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain - Styling Basics</title>
+
+  <!--
+    INTERNAL CSS
+    ==================================
+    - Ditulis di dalam tag <style> di bagian <head>.
+    - Berlaku hanya untuk halaman HTML ini.
+    - Cocok untuk halaman kecil atau contoh demo.
+  -->
+  <style>
+    .internal-example {
+      background: #e0f2fe;
+      color: #0f172a;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+  </style>
+
+  <!--
+    EXTERNAL CSS
+    ==================================
+    - Menggunakan file .css terpisah.
+    - Dihubungkan dengan tag <link>.
+    - Keuntungan:
+        * Bisa dipakai oleh banyak halaman.
+        * Lebih rapi dan mudah di-maintain.
+    - Contoh:
+        <link rel="stylesheet" href="styles.css">
+  -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!--
+    INLINE CSS
+    ==================================
+    - Menggunakan atribut "style" langsung pada elemen.
+    - Contoh:
+        <p style="color: red;">Hello</p>
+    - Keuntungan:
+        * Cepat untuk testing atau override kecil.
+    - Kekurangan:
+        * Sulit di-maintain pada project besar.
+        * Mencampur struktur (HTML) dan presentasi (CSS).
+  -->
+  <p style="color: white; background: #22c55e; padding: 6px 10px;">
+    Contoh teks dengan <strong>Inline CSS</strong>.
+  </p>
+
+
+
+  <!--
+    INTERNAL CSS (lanjutan)
+    ----------------------------------
+    - Style didefinisikan dalam <style> di <head>.
+    - Elemen di bawah ini memakai class yang didefinisikan di atas.
+  -->
+  <p class="internal-example">
+    Contoh teks dengan <strong>Internal CSS</strong> (class .internal-example).
+  </p>
+
+
+
+  <!--
+    EXTERNAL CSS (lanjutan)
+    ----------------------------------
+    - Elemen ini memakai class yang akan di-style dari file styles.css.
+    - File styles.css misalnya berisi:
+        .external-example {
+          background: #fee2e2;
+          border: 1px solid #ef4444;
+          padding: 6px 10px;
+        }
+  -->
+  <p class="external-example">
+    Contoh teks dengan <strong>External CSS</strong> (class .external-example).
+  </p>
+
+</body>
+</html>

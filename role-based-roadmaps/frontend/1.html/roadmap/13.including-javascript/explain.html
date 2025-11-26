@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain - Including JavaScript</title>
+
+  <!--
+    INTERNAL JAVASCRIPT
+    ==================================
+    - Ditulis di dalam tag <script> di file HTML.
+    - Biasanya diletakkan di <head> atau sebelum </body>.
+    - Berlaku hanya untuk halaman tersebut.
+  -->
+  <script>
+    function internalExample() {
+      alert("This alert comes from INTERNAL JavaScript.");
+    }
+  </script>
+
+  <!--
+    EXTERNAL JAVASCRIPT
+    ==================================
+    - Kode JS disimpan di file terpisah (misalnya app.js).
+    - Dihubungkan dengan atribut src di tag <script>.
+    - Keuntungan:
+        * Kode lebih rapi dan terpisah dari HTML.
+        * Bisa dipakai banyak halaman.
+        * Bisa di-cache oleh browser.
+    - Atribut umum:
+        defer : jalan setelah HTML selesai di-parse (recommended)
+        async : jalan secepat mungkin (untuk script yang tidak butuh DOM lengkap)
+  -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!--
+    INLINE JAVASCRIPT
+    ==================================
+    - JavaScript langsung ditulis di atribut HTML event handler.
+    - Contoh: onclick, oninput, onsubmit, dll.
+    - Contohnya di bawah memakai onclick dengan alert().
+    - Kekurangan:
+        * Susah di-maintain untuk project besar.
+        * Mencampur struktur (HTML) dan logic (JS).
+    - Cocok hanya untuk demo/coba-coba cepat.
+  -->
+  <button onclick="alert('This is INLINE JavaScript.')">
+    Inline JS Button
+  </button>
+
+
+
+  <!--
+    INTERNAL JAVASCRIPT (lanjutan)
+    ----------------------------------
+    - Fungsi internalExample() didefinisikan di tag <script> di <head>.
+    - Tombol ini memanggil fungsi tersebut saat diklik.
+  -->
+  <button onclick="internalExample()">
+    Internal JS Button
+  </button>
+
+
+
+  <!--
+    EXTERNAL JAVASCRIPT (lanjutan)
+    ----------------------------------
+    - Elemen-elemen di bawah ini akan di-handle oleh kode di app.js.
+    - Di app.js, kita biasanya pakai addEventListener untuk
+      menambahkan event ke elemen DOM.
+    - Contoh isi app.js:
+        document.addEventListener("DOMContentLoaded", () => {
+          const btn = document.getElementById("external-demo");
+          btn.addEventListener("click", () => {
+            alert("This comes from EXTERNAL JavaScript.");
+          });
+        });
+  -->
+  <button id="external-demo">
+    External JS Button
+  </button>
+
+</body>
+</html>

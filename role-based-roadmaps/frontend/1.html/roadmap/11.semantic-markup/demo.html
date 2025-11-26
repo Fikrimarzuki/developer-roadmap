@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo - Semantic Markup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    header, nav, main, aside, footer {
+      padding: 12px 16px;
+    }
+
+    header {
+      background: #0f766e;
+      color: white;
+    }
+
+    nav {
+      background: #134e4a;
+      color: white;
+    }
+
+    nav a {
+      color: #a7f3d0;
+      margin-right: 12px;
+      text-decoration: none;
+    }
+
+    main {
+      display: flex;
+      gap: 16px;
+      background: #ecfeff;
+    }
+
+    section, article {
+      background: white;
+      padding: 12px;
+      border-radius: 8px;
+      flex: 1;
+    }
+
+    aside {
+      background: #f1f5f9;
+      width: 220px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #e5e7eb;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0.4rem;
+    }
+
+    .box {
+      border: 1px solid #cbd5f5;
+      padding: 8px;
+      border-radius: 6px;
+      background: #f9fafb;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LAYOUT TAGS -->
+  <header>
+    <h1>Semantic Markup Demo</h1>
+    <p>Contoh penggunaan layout tags HTML5.</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Articles</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <div style="flex: 1;">
+      <section>
+        <h2>Highlighting Changes</h2>
+        <div class="box">
+          <p>
+            Harga lama: <del>Rp150.000</del><br>
+            Harga baru: <ins>Rp120.000</ins>
+          </p>
+          <p>
+            Teks yang sudah tidak berlaku lagi bisa ditandai dengan
+            <s>fitur ini akan dirilis tahun 2020</s>.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Quotation &amp; Citation</h2>
+        <div class="box">
+          <p>
+            <abbr title="HyperText Markup Language">HTML</abbr> adalah
+            <dfn>bahasa markup untuk membuat struktur halaman web</dfn>.
+          </p>
+
+          <p>
+            Menurut <cite>Clean Code</cite>, kode yang baik mudah dibaca.
+          </p>
+
+          <blockquote>
+            “Programs must be written for people to read, and only incidentally
+            for machines to execute.”
+          </blockquote>
+
+          <p>
+            Sebagaimana kata seseorang:
+            <q>Practice makes progress.</q>
+          </p>
+
+          <address>
+            Ditulis oleh Fikri<br>
+            Jakarta, Indonesia<br>
+            Email: fikri@example.com
+          </address>
+        </div>
+      </section>
+
+      <article>
+        <h2>Article Example</h2>
+        <p>
+          Ini adalah sebuah <strong>&lt;article&gt;</strong> yang berdiri
+          sendiri dan bisa dipindahkan ke konteks lain (RSS, feed, dsb).
+        </p>
+      </article>
+    </div>
+
+    <aside>
+      <h3>Aside</h3>
+      <p>
+        Ini adalah <strong>&lt;aside&gt;</strong>, biasanya berisi informasi
+        tambahan seperti sidebar, related links, atau iklan.
+      </p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Semantic Demo Site</p>
+  </footer>
+
+</body>
+</html>

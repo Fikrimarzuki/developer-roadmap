@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain - Semantic Markup</title>
+</head>
+<body>
+
+  <!--
+    HIGHLIGHTING CHANGES
+    ====================
+
+    <del>
+    - Menandai teks yang DIHAPUS dari dokumen.
+    - Biasanya ditampilkan dengan garis coret.
+  -->
+  <p>Harga lama: <del>Rp150.000</del></p>
+
+  <!--
+    <ins>
+    - Menandai teks yang DITAMBAHKAN ke dokumen.
+    - Sering ditampilkan dengan underline.
+  -->
+  <p>Harga baru: <ins>Rp120.000</ins></p>
+
+  <!--
+    <s>
+    - Menandai teks yang tidak lagi akurat atau valid,
+      tapi tetap ditampilkan (misal harga lama, info lawas).
+    - Lebih ke "no longer relevant" daripada "deleted".
+  -->
+  <p><s>Promo berlaku sampai 2020.</s></p>
+
+
+
+  <!--
+    QUOTATION / CITATION
+    ====================
+
+    <abbr>
+    - Menandai singkatan.
+    - Atribut "title" berisi kepanjangan singkatan.
+  -->
+  <p>
+    <abbr title="HyperText Markup Language">HTML</abbr> adalah bahasa markup.
+  </p>
+
+  <!--
+    <dfn>
+    - Menandai istilah yang sedang didefinisikan.
+  -->
+  <p>
+    <dfn>Semantic HTML</dfn> adalah penggunaan tag HTML yang
+    menggambarkan makna konten.
+  </p>
+
+  <!--
+    <cite>
+    - Menandai judul karya (buku, artikel, film, dsb).
+  -->
+  <p>
+    Menurut <cite>Clean Code</cite>, kode seharusnya mudah dibaca.
+  </p>
+
+  <!--
+    <blockquote>
+    - Kutipan panjang (block-level) dari sumber lain.
+    - Biasanya ditampilkan dengan indent.
+  -->
+  <blockquote>
+    Talk is cheap. Show me the code.
+  </blockquote>
+
+  <!--
+    <q>
+    - Kutipan pendek di dalam kalimat (inline).
+    - Browser biasanya menambahkan tanda kutip otomatis.
+  -->
+  <p>
+    Seperti yang sering dibilang, <q>practice makes progress</q>.
+  </p>
+
+  <!--
+    <address>
+    - Informasi kontak: alamat penulis, organisasi, dsb.
+    - Bukan untuk alamat rumah random di dalam artikel biasa.
+  -->
+  <address>
+    Ditulis oleh Fikri<br>
+    Jakarta, Indonesia<br>
+    email@example.com
+  </address>
+
+
+
+  <!--
+    LAYOUT TAGS (SEMANTIC STRUCTURE)
+    ================================
+
+    <header>
+    - Bagian atas halaman atau section.
+    - Biasanya berisi logo, judul, navigasi utama.
+  -->
+  <header>
+    <h1>Site Title</h1>
+  </header>
+
+  <!--
+    <nav>
+    - Menandai kumpulan link navigasi.
+  -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!--
+    <main>
+    - Konten utama dari halaman.
+    - Hanya boleh ada satu <main> per halaman.
+  -->
+  <main>
+
+    <!--
+      <section>
+      - Seksi tematik dalam halaman.
+      - Biasanya punya heading sendiri.
+    -->
+    <section>
+      <h2>Section Title</h2>
+      <p>Ini contoh isi di dalam section.</p>
+    </section>
+
+    <!--
+      <article>
+      - Konten mandiri yang bisa berdiri sendiri:
+        posting blog, berita, card artikel, dsb.
+    -->
+    <article>
+      <h2>Article Title</h2>
+      <p>Ini contoh sebuah artikel.</p>
+    </article>
+
+    <!--
+      <aside>
+      - Konten sampingan / tambahan dari konten utama:
+        sidebar, related links, iklan, dsb.
+    -->
+    <aside>
+      <p>Ini adalah aside (sidebar) dengan info tambahan.</p>
+    </aside>
+
+  </main>
+
+  <!--
+    <footer>
+    - Bagian bawah halaman atau section.
+    - Biasanya berisi copyright, link tambahan, kontak.
+  -->
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
+
+</body>
+</html>
