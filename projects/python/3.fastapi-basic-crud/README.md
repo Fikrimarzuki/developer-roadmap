@@ -19,4 +19,4 @@
 - DELETE `/users/:id`
 
 ## Notes
-- Saat ini kalau cek melalui swagger akan terlihat bahwa POST `/users` masih tidak ada parameter, hal ini karena membutuhkan parameter `request: Request`
+- Saat ini kalau cek melalui swagger akan terlihat bahwa POST `/users` masih tidak ada parameter, hal ini karena menggunakan parameter `request: Request`
