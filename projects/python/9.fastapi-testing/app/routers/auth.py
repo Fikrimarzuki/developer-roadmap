@@ -2,13 +2,17 @@ from fastapi import APIRouter, Depends
 from sqlmodel import Session
 from app.core.database import get_session
 from app.services.auth_service import login, refresh, logout
+from app.schemas.auth import LoginRequest
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 @router.post("/login")
-def login_user(data: dict, session: Session = Depends(get_session)):
+def login_user(
+  payload: LoginRequest,
+  session: Session = Depends(get_session),
+):
   access, refresh_token = login(
-    session, data["email"], data["password"]
+    session, payload.email, payload.password
   )
   return {
     "access_token": access,
