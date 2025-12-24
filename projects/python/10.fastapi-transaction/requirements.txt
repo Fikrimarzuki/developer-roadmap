@@ -1,0 +1,9 @@
+fastapi[standard]
+sqlmodel
+alembic
+pydantic-settings
+python-jose[cryptography]
+argon2-cffi
+
+pytest
+httpx

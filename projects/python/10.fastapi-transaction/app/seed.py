@@ -1,0 +1,34 @@
+from sqlmodel import Session, select
+from app.core.database import engine
+from app.core.security import hash_password
+from app.models.user import User
+from app.models.product import Product
+
+def seed():
+  with Session(engine) as s:
+    if s.exec(select(User)).first():
+      print("Seed skipped: data exists")
+      return
+
+    admin = User(
+      email="admin@mail.com",
+      name="Admin",
+      password_hash=hash_password("admin123"),
+      role="admin",
+      is_active=True,
+    )
+    s.add(admin)
+
+    products = [
+      Product(sku="SKU-001", name="Keyboard", price=250000, stock=10),
+      Product(sku="SKU-002", name="Mouse", price=150000, stock=20),
+      Product(sku="SKU-003", name="Monitor", price=2000000, stock=5),
+    ]
+    for p in products:
+      s.add(p)
+
+    s.commit()
+    print("Seeded admin + products")
+
+if __name__ == "__main__":
+  seed()
