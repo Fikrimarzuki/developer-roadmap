@@ -1,0 +1,63 @@
+[project]
+name = "fastapi-orders"
+version = "0.1.0"
+description = "FastAPI Orders API with auth, transactions, views, and tests"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.venv
+    | \.git
+    | \.pytest_cache
+    | alembic
+  )/
+)
+'''
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "I",   # import sorting
+  "B",   # bugbear
+]
+ignore = [
+  "E501",  # kita sudah pakai line-length sendiri
+  "B008",
+]
+
+exclude = [
+  ".venv",
+  "alembic",
+  "__pycache__",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+strict_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+show_error_codes = true
+
+mypy_path = "app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
