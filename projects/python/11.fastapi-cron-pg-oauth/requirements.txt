@@ -1,0 +1,16 @@
+fastapi[standard]
+
+sqlmodel
+psycopg2-binary
+alembic
+pydantic-settings
+
+python-jose[cryptography]
+argon2-cffi
+
+authlib
+fastapi-mail
+apscheduler
+
+pytest
+httpx
