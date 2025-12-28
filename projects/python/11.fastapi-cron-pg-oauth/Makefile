@@ -1,3 +1,6 @@
+run:
+	fastapi dev app/main.py
+
 dev-install:
 	pip install -r dev-requirements.txt
 
