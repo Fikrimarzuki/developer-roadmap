@@ -1,12 +1,14 @@
 from fastapi import APIRouter, Depends, Request
 from sqlmodel import Session
+
 from app.core.database import get_session
-from app.core.oauth import google_login, google_callback
-from app.schemas.auth import RegisterPayload, LoginPayload
+from app.core.oauth import google_callback, google_login
+from app.schemas.auth import LoginPayload, RegisterPayload, TokenResponse
+from app.schemas.user import UserRead
 from app.services.auth_service import (
-    register_with_password,
-    login_with_password,
     login_with_google_userinfo,
+    login_with_password,
+    register_with_password,
 )
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -17,13 +19,19 @@ def register_user(payload: RegisterPayload, session: Session = Depends(get_sessi
     user = register_with_password(
         session, payload.email, payload.name, payload.password
     )
-    return {"id": user.id, "email": user.email, "name": user.name}
+    return UserRead(
+        id=user.id,  # type: ignore[arg-type]
+        email=user.email,
+        name=user.name,
+        role=user.role,
+        is_active=user.is_active,
+    )
 
 
-@router.post("/login")
+@router.post("/login", response_model=TokenResponse)
 def login_user(payload: LoginPayload, session: Session = Depends(get_session)):
     token = login_with_password(session, payload.email, payload.password)
-    return {"access_token": token, "token_type": "bearer"}
+    return TokenResponse(access_token=token)
 
 
 @router.get("/google/login")

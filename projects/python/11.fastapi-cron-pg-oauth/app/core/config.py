@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     app_name: str = "Orders API Advanced"
     database_url: str = (
-        "postgresql+psycopg2://postgres:postgres@localhost:5432/orders_db"
+        "postgresql+psycopg2://postgres:postgresql123@localhost:5432/orders_db"
     )
 
     jwt_secret: str = "change-me"
@@ -15,8 +15,8 @@ class Settings(BaseSettings):
     debug: bool = False
 
     # Email
-    mail_username: str = ""
-    mail_password: str = ""
+    mail_username: str = "mail"
+    mail_password: str = "pass"
     mail_from: str = "no-reply@example.com"
     mail_server: str = "smtp.gmail.com"
     mail_port: int = 587

@@ -1,5 +1,6 @@
 from authlib.integrations.starlette_client import OAuth
 from fastapi import Request
+
 from app.core.config import settings
 
 oauth = OAuth()

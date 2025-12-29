@@ -1,12 +1,13 @@
 from datetime import datetime, timedelta
+
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from sqlmodel import Session, select
 
 from app.core.database import engine
+from app.core.email import send_order_email
 from app.models.order import Order
 from app.models.user import User
-from app.core.email import send_order_email
 
 scheduler = AsyncIOScheduler()
 

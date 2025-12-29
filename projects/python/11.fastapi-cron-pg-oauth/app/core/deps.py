@@ -1,6 +1,7 @@
 from fastapi import Depends, HTTPException
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlmodel import Session
+
 from app.core.database import get_session
 from app.core.security import decode_token
 from app.models.user import User
