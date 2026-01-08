@@ -1,0 +1,19 @@
+<%- include("../partials/header", { title: "Edit User" }) %>
+
+<form action="/users/<%= user.id %>" method="post">
+  <div class="row">
+    <div>Name</div>
+    <input name="name" value="<%= user.name %>" required />
+  </div>
+
+  <div class="row">
+    <div>Email</div>
+    <input name="email" value="<%= user.email %>" required />
+  </div>
+
+  <button type="submit">Save</button>
+</form>
+
+<p><a href="/users/<%= user.id %>">← cancel</a></p>
+
+<%- include("../partials/footer") %>
