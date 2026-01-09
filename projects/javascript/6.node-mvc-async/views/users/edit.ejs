@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <form action="/users/<%= user.id %>/edit" method="POST">
+    <div>
+      <label>Name</label><br />
+      <input
+        name="name"
+        value="<%= user.name %>"
+        required
+      />
+    </div>
+
+    <div style="margin-top:10px;">
+      <label>Email</label><br />
+      <input
+        name="email"
+        type="email"
+        value="<%= user.email || '' %>"
+      />
+    </div>
+
+    <div style="margin-top:10px;">
+      <button type="submit">Update</button>
+      <a href="/users/<%= user.id %>">Cancel</a>
+    </div>
+  </form>
+</body>
+</html>

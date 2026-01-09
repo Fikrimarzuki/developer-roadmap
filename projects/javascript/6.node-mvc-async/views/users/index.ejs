@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title><%= title %></title></head>
+<body>
+  <h1><%= title %></h1>
+  <p><a href="/users/new">+ Create User</a></p>
+
+  <% if (users.length === 0) { %>
+    <p>No users yet.</p>
+  <% } else { %>
+    <ul>
+      <% users.forEach(u => { %>
+        <li>
+          <a href="/users/<%= u.id %>"><%= u.name %> (<%= u.email || "no email" %>)</a>
+          <a href="/users/<%= u.id %>">View</a> |
+          <a href="/users/<%= u.id %>/edit">Edit</a>
+          <form action="/users/<%= u.id %>/delete" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</body>
+</html>
