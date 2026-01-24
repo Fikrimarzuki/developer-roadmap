@@ -1,0 +1,39 @@
+# Related Concept
+- Syntax and Semantics
+  - Variables, DataTypes and Constants
+  - Control Flow and Constructs
+  - Functions and Method Syntax
+  - Pattern Matching & Destructuring
+- Constructs
+  - Enums
+  - Traits
+  - Structs
+  - Impl Blocks
+- Data Structures
+  - Integers
+  - Floats
+  - Boolean
+  - Character
+  - String
+  - Tuple
+  - Array
+  - Vector
+  - Hashmap
+  - Hashset
+  - LinkedList
+  - Stack
+  - Queue
+  - Binary Heap
+- Ownership System
+  - Ownership Rules & Memory Safety
+  - Borrowing, References and Slices
+  - Deep Dive: Stack vs Heap
+- Advanced Topics
+  - BTreeMap
+  - BTreeSet
+  - Mutex
+  - RwLock
+  - Channels
+  - RC
+  - Arc
+  - Box
