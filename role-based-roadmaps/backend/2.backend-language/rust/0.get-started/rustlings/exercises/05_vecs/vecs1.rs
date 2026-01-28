@@ -3,13 +3,14 @@ fn array_and_vec() -> ([i32; 4], Vec<i32>) {
 
     // TODO: Create a vector called `v` which contains the exact same elements as in the array `a`.
     // Use the vector macro.
-    // let v = ???;
-
-    (a, v)
+    
+    let v = &a[..];
+    (a, v.to_vec())
 }
 
 fn main() {
     // You can optionally experiment here.
+    array_and_vec();
 }
 
 #[cfg(test)]
