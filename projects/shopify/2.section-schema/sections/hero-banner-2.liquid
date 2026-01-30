@@ -1,0 +1,97 @@
+{%- liquid
+  assign align = section.settings.text_align
+  assign pad = section.settings.padding
+-%}
+
+<section
+  style="
+    padding: {{ pad }}px;
+    text-align: {{ align }};
+    background: {{ section.settings.bg_color }};
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+  "
+>
+  {%- if section.settings.bg_image != blank -%}
+    <div style="position:absolute; inset:0; z-index:0;">
+      <img
+        src="{{ section.settings.bg_image | image_url: width: 2000 }}"
+        alt=""
+        loading="lazy"
+        style="width:100%; height:100%; object-fit: cover;"
+      >
+      {%- if section.settings.overlay_opacity > 0 -%}
+        <div
+          style="
+            position:absolute; inset:0;
+            background: rgba(0,0,0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+          "
+        ></div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div style="position:relative; z-index:1; max-width: 900px; margin: 0 auto; color: {{ section.settings.text_color }};">
+    <h2 style="margin:0 0 12px 0;">{{ section.settings.title }}</h2>
+
+    {%- if section.settings.subtitle != blank -%}
+      <div style="margin:0 0 18px 0;">
+        {{ section.settings.subtitle }}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_button and section.settings.button_url != blank -%}
+      <a
+        href="{{ section.settings.button_url }}"
+        style="
+          display:inline-block;
+          padding: 10px 16px;
+          border: 1px solid currentColor;
+          text-decoration:none;
+          border-radius: 10px;
+        "
+      >
+        {{ section.settings.button_text }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner 2",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Heading", "default": "Welcome to our store" },
+
+    { "type": "richtext", "id": "subtitle", "label": "Subheading", "default": "<p>This is an upgraded section using multiple schema settings.</p><p>See admin for the settings.</p>" },
+
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#f5f5f5" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#111111" },
+
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "overlay_opacity", "label": "Overlay opacity", "min": 0, "max": 80, "step": 5, "unit": "%", "default": 30 },
+
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+
+    { "type": "range", "id": "padding", "label": "Padding", "min": 16, "max": 120, "step": 4, "unit": "px", "default": 48 },
+
+    { "type": "checkbox", "id": "show_button", "label": "Show button", "default": true },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Shop now" },
+    { "type": "url", "id": "button_url", "label": "Button link" }
+  ],
+  "presets": [
+    { "name": "Hero Banner 2" }
+  ]
+}
+{% endschema %}

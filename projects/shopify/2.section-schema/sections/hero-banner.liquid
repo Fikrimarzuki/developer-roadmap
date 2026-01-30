@@ -1,0 +1,58 @@
+<section style="padding:40px; margin-bottom:10px; text-align:center; background: {{ section.settings.bg_color }};">
+  <h2>{{ section.settings.title }}</h2>
+  <p>{{ section.settings.subtitle }}</p>
+</section>
+{% if section.settings.bg_image %}
+  <img src="{{ section.settings.bg_image | image_url }}" alt="">
+{% endif %}
+<section style="padding:40px; margin-bottom:10px; text-align:center; background: {{ section.settings.bg_color }};">
+  <h2>{{ section.settings.title_2 }}</h2>
+  <p>{{ section.settings.subtitle_2 }}</p>
+</section>
+
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Welcome to our store"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "This is a custom section"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Heading",
+      "default": "Store"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_2",
+      "label": "Subheading",
+      "default": "This is a custom section 2"
+    },
+  ],
+  "presets": [
+    { "name": "Hero Banner" }
+  ]
+}
+{% endschema %}
