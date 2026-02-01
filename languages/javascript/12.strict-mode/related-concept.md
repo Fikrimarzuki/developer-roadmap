@@ -1,0 +1,4 @@
+# Strict Mode
+
+## Related Concept
+- 

@@ -1,0 +1,9 @@
+{
+  "arrayType": [],
+  "objectType": {
+    "stringType": "",
+    "numberType": 123,
+    "boolType": true,
+    "nullType": null
+  }
+}
