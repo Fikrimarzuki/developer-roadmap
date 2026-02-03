@@ -9,3 +9,11 @@
 - Text Spacing
 - Line Height
 - Text Shadows
+- Fonts
+  - Font families
+  - Font Style
+  - Font Size
+  - Font Weight
+  - Font Shorthand
+  - Google Fonts
+  - Font Variant

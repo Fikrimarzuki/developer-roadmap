@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Functions Demo</title>
+<style>
+  :root {
+    --spacing: 20px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    padding: var(--spacing);
+  }
+
+  .box {
+    background: lightblue;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  /* CALC */
+  .calc {
+    width: calc(100% - 40px);
+  }
+
+  /* MIN */
+  .min {
+    width: min(300px, 80%);
+  }
+
+  /* MAX */
+  .max {
+    width: max(300px, 50%);
+  }
+
+  /* CLAMP */
+  h1 {
+    font-size: clamp(20px, 5vw, 50px);
+  }
+
+  /* COLOR FUNCTIONS */
+  .rgb { background: rgb(255, 99, 71); }
+  .hsl { background: hsl(200, 70%, 50%); }
+
+  /* TRANSFORM FUNCTIONS */
+  .transform {
+    transform: rotate(10deg) translateX(20px);
+  }
+</style>
+</head>
+<body>
+
+<h1>CSS Functions</h1>
+
+<div class="box calc">Width using calc()</div>
+<div class="box min">Width using min()</div>
+<div class="box max">Width using max()</div>
+<div class="box rgb">RGB color</div>
+<div class="box hsl">HSL color</div>
+<div class="box transform">Transform functions</div>
+
+</body>
+</html>

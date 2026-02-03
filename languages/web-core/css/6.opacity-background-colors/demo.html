@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Opacity, Background & Colors Demo</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  .card {
+    padding: 20px;
+    margin: 20px 0;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* OPACITY */
+  .opacity-box {
+    background-color: blue;
+    opacity: 0.5;
+  }
+
+  /* BACKGROUND COLOR */
+  .bg-color {
+    background-color: rgb(34, 139, 34);
+  }
+
+  /* BACKGROUND IMAGE */
+  .bg-image {
+    background-image: url("https://picsum.photos/400/200");
+    background-size: cover;
+    height: 200px;
+  }
+
+  /* BACKGROUND GRADIENT */
+  .bg-gradient {
+    background: linear-gradient(90deg, red, orange, yellow);
+  }
+
+  /* BACKGROUND POSITION */
+  .bg-position {
+    background-image: url("https://picsum.photos/400/200?2");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+  }
+
+  /* BACKGROUND ATTACHMENT */
+  .bg-attachment {
+    background-image: url("https://picsum.photos/800/400?3");
+    background-attachment: fixed;
+    background-size: cover;
+    height: 200px;
+  }
+
+  /* COLOR FORMATS */
+  .color-rgb { background-color: rgb(255, 99, 71); }
+  .color-hsl { background-color: hsl(200, 70%, 50%); }
+  .color-hex { background-color: #8a2be2; }
+  .color-name { background-color: teal; }
+  .color-alpha { background-color: rgba(255, 0, 0, 0.5); }
+</style>
+</head>
+<body>
+
+<h1>Opacity</h1>
+<div class="card opacity-box">Opacity 0.5 (semua isi ikut transparan)</div>
+
+<h1>Background</h1>
+<div class="card bg-color">Background Color</div>
+<div class="card bg-image">Background Image</div>
+<div class="card bg-gradient">Background Gradient</div>
+<div class="card bg-position">Background Position Center</div>
+<div class="card bg-attachment">Background Attachment Fixed</div>
+
+<h1>Color Formats</h1>
+<div class="card color-rgb">RGB</div>
+<div class="card color-hsl">HSL</div>
+<div class="card color-hex">HEX</div>
+<div class="card color-name">Named Color</div>
+<div class="card color-alpha">RGBA (with alpha)</div>
+
+</body>
+</html>

@@ -1,7 +1,9 @@
 # Opacity
 # Background
+# Colors
 
 ## Related Concept
+- Opacity
 - Background Color
 - Background Image
 - Background Gradient

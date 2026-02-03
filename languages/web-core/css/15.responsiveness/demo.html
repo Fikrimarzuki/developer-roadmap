@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .box {
+    background: lightblue;
+    padding: 20px;
+    border: 2px solid black;
+  }
+
+  /* MEDIA QUERY */
+  @media (max-width: 700px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* CONTAINER QUERY */
+  .card-wrapper {
+    container-type: inline-size;
+    border: 2px solid black;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: lightgreen;
+    padding: 10px;
+  }
+
+  @container (max-width: 300px) {
+    .card {
+      background: pink;
+    }
+  }
+
+  /* RESPONSIVE TYPOGRAPHY */
+  h1 {
+    font-size: clamp(20px, 5vw, 50px);
+  }
+</style>
+</head>
+<body>
+
+<h1>Responsive Typography</h1>
+
+<div class="layout">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+
+<div class="card-wrapper">
+  <div class="card">Resize container to see container query</div>
+</div>
+
+</body>
+</html>

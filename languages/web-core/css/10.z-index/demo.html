@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Z-Index, Specificity, Tables, Lists, Images & Filters Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .section {
+      border: 2px solid #000;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .title {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    code {
+      background: #f2f2f2;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    /* Z-Index + Stacking Context */
+
+    .stack-area {
+      position: relative;
+      height: 220px;
+      border: 2px dashed #000;
+      padding: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .stack-box {
+      position: absolute;
+      width: 140px;
+      height: 90px;
+      border: 2px solid #000;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .box-a { background: #ffb3b3; top: 30px; left: 30px; z-index: 1; }
+    .box-b { background: #b3d9ff; top: 60px; left: 70px; z-index: 2; }
+    .box-c { background: #b3ffcc; top: 90px; left: 110px; z-index: 3; }
+
+    /* Stacking context parent */
+    .context-parent {
+      position: relative;
+      z-index: 0;        /* creates stacking context (with position) */
+      opacity: 0.95;     /* also creates stacking context */
+      margin-top: 12px;
+      border: 2px solid #000;
+      padding: 10px;
+      background: #fafafa;
+    }
+
+    .inside-context {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 150px;
+      height: 70px;
+      background: #ffd966;
+      border: 2px solid #000;
+      display: grid;
+      place-items: center;
+      z-index: 9999; /* large, but only within THIS context */
+      font-weight: 700;
+    }
+
+    .outside-context {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 170px;
+      height: 70px;
+      background: #d9b3ff;
+      border: 2px solid #000;
+      display: grid;
+      place-items: center;
+      z-index: 4; /* can still appear above elements in other contexts depending on stacking */
+      font-weight: 700;
+    }
+
+    /* CSS Specificity (Element < Class < ID < Inline) */
+
+    /* element selector */
+    p.spec { color: #0b57d0; }        /* 0,0,1 (element+class in practice: p.spec -> class adds) */
+    /* class selector */
+    .spec { color: #1b7f2a; }         /* 0,0,1,0 */
+    /* id selector */
+    #spec { color: #c62828; }         /* 0,1,0,0 */
+
+    /* show "tie breaker" when specificity equal: last wins */
+    .tie { color: #555; }
+    .tie { color: #8a2be2; } /* same selector, later wins */
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #f2f2f2;
+    }
+    tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    /* Lists */
+    .list-demo ul {
+      list-style-type: square;
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .list-demo ol {
+      list-style-type: upper-roman;
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
+
+    .list-demo .custom-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 10px 0 0;
+    }
+    .list-demo .custom-list li {
+      padding: 6px 10px;
+      border: 1px solid #000;
+      margin: 6px 0;
+      background: #fff;
+    }
+
+    /* Images & Filters */
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .img-card {
+      border: 2px solid #000;
+      padding: 10px;
+      background: #fff;
+    }
+
+    .img-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #000;
+    }
+
+    .caption {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .grayscale { filter: grayscale(100%); }
+    .blur { filter: blur(2px); }
+    .contrast { filter: contrast(140%); }
+    .combo { filter: brightness(110%) contrast(120%) saturate(140%); }
+  </style>
+</head>
+
+<body>
+  <h1>Mixed CSS Demo</h1>
+
+  <!-- 1) Z-Index & Stacking Context -->
+  <div class="section">
+    <h2 class="title">1) Z-Index & Stacking Context</h2>
+
+    <p>
+      Tiga box ini saling tumpuk. <code>z-index</code> terbesar tampil paling atas
+      (selama masih dalam konteks yang sama).
+    </p>
+
+    <div class="stack-area">
+      <div class="stack-box box-a">z-index: 1</div>
+      <div class="stack-box box-b">z-index: 2</div>
+      <div class="stack-box box-c">z-index: 3</div>
+
+      <!-- Outside context element -->
+      <div class="outside-context">Outside Context</div>
+    </div>
+
+    <div class="context-parent">
+      <p style="margin: 0 0 80px;">
+        Ini parent yang membentuk <b>stacking context</b> (contoh: pakai <code>position + z-index</code> atau <code>opacity</code>).
+        Elemen di dalamnya (kuning) bisa punya <code>z-index</code> besar, tapi dia “bertarung” hanya di dalam konteks ini.
+      </p>
+      <div class="inside-context">Inside Context<br/>z-index: 9999</div>
+    </div>
+  </div>
+
+  <!-- 2) CSS Specificity -->
+  <div class="section">
+    <h2 class="title">2) CSS Specificity</h2>
+
+    <p class="spec" id="spec">
+      Aku punya <code>class="spec"</code> dan <code>id="spec"</code>.
+      Warna yang menang adalah dari <b>ID selector</b> (lebih spesifik).
+    </p>
+
+    <p class="tie">
+      Ini contoh selector yang sama ditulis dua kali — rule yang <b>paling bawah</b> menang.
+    </p>
+
+    <p class="spec" id="spec" style="color: #ff6f00;">
+      Ini sama seperti atas, tapi punya <code>inline style</code> → inline menang.
+    </p>
+  </div>
+
+  <!-- 3) Tables -->
+  <div class="section">
+    <h2 class="title">3) Tables</h2>
+
+    <p>Table basic dengan <code>border-collapse</code>, padding, zebra rows.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Status</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Login</td>
+          <td>Done</td>
+          <td>Javascriptia</td>
+        </tr>
+        <tr>
+          <td>Profile Page</td>
+          <td>In Progress</td>
+          <td>Team</td>
+        </tr>
+        <tr>
+          <td>Notifications</td>
+          <td>Todo</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Billing</td>
+          <td>Todo</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4) Lists -->
+  <div class="section list-demo">
+    <h2 class="title">4) Lists</h2>
+
+    <p><b>UL</b> (square):</p>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <p><b>OL</b> (upper-roman):</p>
+    <ol>
+      <li>Basics</li>
+      <li>Layout</li>
+      <li>Responsive</li>
+    </ol>
+
+    <p><b>Custom list</b> (no bullets):</p>
+    <ul class="custom-list">
+      <li>✅ Clean UI list item</li>
+      <li>✅ Looks like a card</li>
+      <li>✅ Easy to style</li>
+    </ul>
+  </div>
+
+  <!-- 5) Images & Filters -->
+  <div class="section">
+    <h2 class="title">5) Images & Filters</h2>
+
+    <p>
+      Gunakan <code>max-width: 100%</code> + <code>height: auto</code> untuk responsif,
+      dan <code>object-fit: cover</code> kalau mau crop rapih.
+      Filter dipakai buat efek visual.
+    </p>
+
+    <div class="img-grid">
+      <div class="img-card">
+        <img class="grayscale" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80&auto=format&fit=crop" alt="demo">
+        <div class="caption">grayscale(100%)</div>
+      </div>
+
+      <div class="img-card">
+        <img class="blur" src="https://images.unsplash.com/photo-1520975958225-4a5f0b6b6c6b?w=1200&q=80&auto=format&fit=crop" alt="demo">
+        <div class="caption">blur(2px)</div>
+      </div>
+
+      <div class="img-card">
+        <img class="contrast" src="https://images.unsplash.com/photo-1520975682215-8d85d055c7c5?w=1200&q=80&auto=format&fit=crop" alt="demo">
+        <div class="caption">contrast(140%)</div>
+      </div>
+
+      <div class="img-card">
+        <img class="combo" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80&auto=format&fit=crop" alt="demo">
+        <div class="caption">brightness + contrast + saturate</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

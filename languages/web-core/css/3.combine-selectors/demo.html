@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Combinator Selectors Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      border: 2px solid black;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* DESCENDANT (space) */
+    .descendant p {
+      color: blue;
+    }
+
+    /* CHILD (>) */
+    .child > p {
+      color: green;
+    }
+
+    /* NEXT SIBLING (+) */
+    h3 + p {
+      color: red;
+    }
+
+    /* SUBSEQUENT SIBLING (~) */
+    h4 ~ p {
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Combinator Selectors</h1>
+
+  <!-- DESCENDANT -->
+  <div class="box descendant">
+    <p>Direct child paragraph (blue)</p>
+    <div>
+      <p>Nested paragraph (also blue)</p>
+    </div>
+  </div>
+
+  <!-- CHILD -->
+  <div class="box child">
+    <p>Direct child paragraph (green)</p>
+    <div>
+      <p>Nested paragraph (NOT green)</p>
+    </div>
+  </div>
+
+  <!-- NEXT SIBLING -->
+  <div class="box">
+    <h3>Heading 3</h3>
+    <p>This paragraph is right after h3 (red)</p>
+    <p>This one is not affected</p>
+  </div>
+
+  <!-- SUBSEQUENT SIBLING -->
+  <div class="box">
+    <h4>Heading 4</h4>
+    <p>Paragraph after h4 (purple)</p>
+    <div>Some element</div>
+    <p>Another paragraph after h4 (purple)</p>
+  </div>
+
+</body>
+</html>

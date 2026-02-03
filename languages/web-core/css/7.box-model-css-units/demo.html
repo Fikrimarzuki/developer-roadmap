@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Box Model & Units Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .box {
+    background-color: lightblue;
+    width: 200px;
+    height: 100px;
+
+    padding: 20px;
+    margin: 30px;
+
+    border: 5px solid black;
+  }
+
+  .outline-box {
+    outline: 5px dashed red;
+  }
+
+  .shadow-box {
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  }
+
+  /* CSS Units */
+  .units {
+    font-size: 16px;
+  }
+
+  .px { font-size: 20px; }
+  .em { font-size: 2em; }
+  .rem { font-size: 2rem; }
+  .vw { font-size: 5vw; }
+
+  .calc-box {
+    width: calc(100% - 50px);
+    background-color: lightgreen;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Box Model</h1>
+<div class="box">Box Model Example</div>
+
+<div class="box outline-box">With Outline</div>
+
+<div class="box shadow-box">With Shadow</div>
+
+<h1>CSS Units</h1>
+<div class="units">
+  <p class="px">Font size in PX</p>
+  <p class="em">Font size in EM</p>
+  <p class="rem">Font size in REM</p>
+  <p class="vw">Font size in VW</p>
+</div>
+
+<div class="calc-box">Width using calc()</div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pseudo Element Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  .section {
+    margin-bottom: 30px;
+  }
+
+  /* BEFORE & AFTER */
+  .box {
+    padding: 10px;
+    border: 2px solid black;
+    position: relative;
+  }
+
+  .box::before {
+    content: "★ ";
+    color: red;
+  }
+
+  .box::after {
+    content: " ✓";
+    color: green;
+  }
+
+  /* FIRST LETTER */
+  .first-letter::first-letter {
+    font-size: 32px;
+    color: blue;
+    font-weight: bold;
+  }
+
+  /* FIRST LINE */
+  .first-line::first-line {
+    color: purple;
+    font-weight: bold;
+  }
+
+  /* SELECTION */
+  ::selection {
+    background: black;
+    color: white;
+  }
+
+  /* PLACEHOLDER */
+  input::placeholder {
+    color: gray;
+    font-style: italic;
+  }
+
+  /* MARKER */
+  ul li::marker {
+    color: red;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Pseudo Elements Demo</h1>
+
+<div class="section">
+  <h2>::before & ::after</h2>
+  <div class="box">This text has pseudo content</div>
+</div>
+
+<div class="section">
+  <h2>::first-letter</h2>
+  <p class="first-letter">
+    This paragraph has a large first letter like in magazines.
+  </p>
+</div>
+
+<div class="section">
+  <h2>::first-line</h2>
+  <p class="first-line">
+    This paragraph has the first line styled differently. Resize window to see effect.
+  </p>
+</div>
+
+<div class="section">
+  <h2>::selection</h2>
+  <p>Select this text to see selection styling.</p>
+</div>
+
+<div class="section">
+  <h2>::placeholder</h2>
+  <input type="text" placeholder="Type something...">
+</div>
+
+<div class="section">
+  <h2>::marker</h2>
+  <ul>
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li>Item Three</li>
+  </ul>
+</div>
+
+</body>
+</html>

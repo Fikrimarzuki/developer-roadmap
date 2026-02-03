@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Text Styling Demo</title>
+
+  <!-- Google Fonts (optional, biar kelihatan bedanya font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .card {
+      border: 2px solid #000;
+      padding: 14px;
+      margin: 14px 0;
+    }
+
+    /* 1) Color */
+    .color-demo {
+      color: #0b57d0;
+    }
+
+    /* 2) Direction (lihat catatan: butuh bahasa RTL biar jelas) */
+    .direction-demo {
+      direction: rtl;
+      unicode-bidi: bidi-override; /* supaya arah tulisan benar-benar kebalik */
+      border-left: 6px solid #000;
+      padding-left: 12px;
+    }
+
+    /* 3) Text Alignment */
+    .align-demo {
+      text-align: center;
+    }
+
+    /* 4) Text Decoration */
+    .decoration-demo a {
+      text-decoration: none;
+      color: #111;
+      border-bottom: 2px dashed #111;
+    }
+
+    .decoration-demo .strike {
+      text-decoration: line-through;
+    }
+
+    /* 5) Text Transform */
+    .transform-demo .upper { text-transform: uppercase; }
+    .transform-demo .lower { text-transform: lowercase; }
+    .transform-demo .cap   { text-transform: capitalize; }
+
+    /* 6) Text Spacing */
+    .spacing-demo {
+      letter-spacing: 2px;
+      word-spacing: 10px;
+    }
+    .indent-demo {
+      text-indent: 28px;
+    }
+
+    /* 7) Line Height */
+    .lineheight-demo.tight { line-height: 1.1; }
+    .lineheight-demo.loose { line-height: 2.2; }
+
+    /* 8) Text Shadows */
+    .shadow-demo {
+      font-size: 28px;
+      font-weight: 700;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+    }
+
+    /* 9) Fonts */
+    .fonts-demo .poppins {
+      font-family: "Poppins", sans-serif;
+    }
+    .fonts-demo .style {
+      font-style: italic;
+    }
+    .fonts-demo .size {
+      font-size: 22px;
+    }
+    .fonts-demo .weight {
+      font-weight: 700;
+    }
+    .fonts-demo .variant {
+      font-variant: small-caps;
+    }
+    .fonts-demo .shorthand {
+      font: italic 700 20px/1.4 "Poppins", sans-serif;
+    }
+
+    .label {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Text Styling Demo</h1>
+
+  <div class="card color-demo">
+    <div class="label">Color</div>
+    Ini contoh teks dengan <code>color</code>.
+  </div>
+
+  <div class="card direction-demo">
+    <div class="label">Direction (RTL)</div>
+    Ini contoh direction RTL. (Efeknya lebih jelas jika pakai bahasa Arab/ Ibrani)
+  </div>
+
+  <div class="card align-demo">
+    <div class="label">Text Alignment</div>
+    Teks ini di-center dengan <code>text-align: center;</code>
+  </div>
+
+  <div class="card decoration-demo">
+    <div class="label">Text Decoration</div>
+    <a href="#">Link tanpa underline (custom dashed underline)</a>
+    <p class="strike">Teks ini dicoret dengan line-through.</p>
+  </div>
+
+  <div class="card transform-demo">
+    <div class="label">Text Transform</div>
+    <p class="upper">ini jadi uppercase</p>
+    <p class="lower">INI jadi lowercase</p>
+    <p class="cap">ini jadi capitalize tiap kata</p>
+  </div>
+
+  <div class="card spacing-demo">
+    <div class="label">Text Spacing</div>
+    letter-spacing dan word-spacing bikin teks terasa "lebih renggang".
+  </div>
+
+  <div class="card indent-demo">
+    <div class="label">Text Indent</div>
+    Ini paragraf dengan <code>text-indent</code> seperti gaya buku/koran.
+  </div>
+
+  <div class="card">
+    <div class="label">Line Height</div>
+    <p class="lineheight-demo tight">
+      Tight line-height (1.1). Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Vestibulum at nisl a tortor tristique.
+    </p>
+    <p class="lineheight-demo loose">
+      Loose line-height (2.2). Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Vestibulum at nisl a tortor tristique.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="label">Text Shadow</div>
+    <div class="shadow-demo">Shadow Text</div>
+  </div>
+
+  <div class="card fonts-demo">
+    <div class="label">Fonts</div>
+    <p class="poppins">Font family: Poppins (Google Font)</p>
+    <p class="poppins style">Font style: italic</p>
+    <p class="poppins size">Font size: 22px</p>
+    <p class="poppins weight">Font weight: 700</p>
+    <p class="poppins variant">Font variant: small-caps</p>
+    <p class="shorthand">Font shorthand: italic 700 20px/1.4 Poppins</p>
+  </div>
+
+</body>
+</html>

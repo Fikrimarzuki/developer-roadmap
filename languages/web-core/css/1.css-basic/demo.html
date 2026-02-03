@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Basics Demo</title>
+
+  <!-- 🔹 INTERNAL CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      color: blue;
+    }
+
+    .box {
+      padding: 20px;
+      margin: 10px 0;
+      border: 2px solid black;
+      background-color: lightyellow;
+    }
+
+    p {
+      color: green;
+    }
+  </style>
+
+  <!-- 🔹 EXTERNAL CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>CSS Basics Demo</h1>
+
+  <div class="box">
+    <p>This paragraph is styled by INTERNAL CSS (green text).</p>
+  </div>
+
+  <div class="box">
+    <p style="color: red;">
+      This paragraph uses INLINE CSS (red text).
+    </p>
+  </div>
+
+  <div class="box external-box">
+    <p>This box background will come from EXTERNAL CSS.</p>
+  </div>
+
+</body>
+</html>

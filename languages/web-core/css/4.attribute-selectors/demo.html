@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attribute Selectors</title>
+
+  <style>
+    /* ATTRIBUTE SELECTORS */
+
+    /* All inputs */
+    input {
+      padding: 5px;
+      margin: 5px 0;
+    }
+
+    /* Input type text */
+    input[type="text"] {
+      border: 2px solid blue;
+    }
+
+    /* Input type password */
+    input[type="password"] {
+      border: 2px solid red;
+    }
+
+    /* Attribute contains */
+    a[href*="google"] {
+      color: green;
+    }
+
+    /* Attribute starts with */
+    a[href^="https"] {
+      font-weight: bold;
+    }
+
+    /* Attribute ends with */
+    a[href$=".pdf"] {
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Attribute Selectors</h1>
+
+  <input type="text" placeholder="Text input">
+  <input type="password" placeholder="Password input">
+
+  <p>
+    <a href="https://google.com">Google Link</a><br>
+    <a href="https://example.com/file.pdf">PDF File</a>
+  </p>
+
+</body>
+</html>

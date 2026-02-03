@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Syntax Basics Demo</title>
+
+    <style>
+      /* 
+       selector { property: value; }
+     */
+
+      /* Element Selector */
+      h1 {
+        color: blue;
+      }
+
+      /* Class Selector (.) */
+      .box {
+        border: 2px solid black;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      /* ID Selector (#) */
+      #special {
+        background-color: lightyellow;
+      }
+
+      /* Universal Selector (*) */
+      * {
+        font-family: Arial, sans-serif;
+      }
+
+      /* Grouping Selector (,) */
+      h2,
+      p {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Syntax Basics</h1>
+
+    <h2>Simple Selectors</h2>
+
+    <div class="box">
+      <p>This paragraph is inside a class box.</p>
+    </div>
+
+    <div class="box" id="special">
+      <p>This box has both class and ID.</p>
+    </div>
+  </body>
+</html>
