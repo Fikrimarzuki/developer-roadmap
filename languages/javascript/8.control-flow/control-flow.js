@@ -87,6 +87,17 @@ try {
 
 
 // Error objects
+// Error() - buat Error object baru
+/*
+  - EvalError
+  - RangeError
+  - ReferenceError
+  - SyntaxError
+  - TypeError
+  - URIError
+  - AggregateError
+  - InternalError
+*/
 try {
   // Akses variabel yang belum dideklarasikan
   console.log(notDefinedVar);

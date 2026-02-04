@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM API Demo</title>
+  <style>
+    body { font-family: Arial; }
+    .box { padding: 10px; margin: 5px 0; border: 1px solid #333; }
+    .active { background: yellow; }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">DOM API Demo</h1>
+
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+
+  <button id="btn">Click Me</button>
+
+  <script>
+    console.log("=== DOM API DEMO ===");
+
+    /* SELECTING ELEMENTS */
+
+    const title = document.getElementById("title");
+    const boxes = document.getElementsByClassName("box");
+    const firstBox = document.querySelector(".box");
+    const allBoxes = document.querySelectorAll(".box");
+
+    console.log("Title:", title);
+    console.log("Boxes HTMLCollection:", boxes);
+    console.log("First Box:", firstBox);
+    console.log("All Boxes NodeList:", allBoxes);
+
+
+    /* MODIFYING CONTENT */
+
+    title.textContent = "DOM Manipulation with JavaScript";
+    firstBox.innerHTML = "<strong>Box 1 (edited)</strong>";
+
+
+    /* CHANGING ATTRIBUTES */
+
+    title.setAttribute("data-role", "header");
+    console.log("data-role:", title.getAttribute("data-role"));
+
+
+    /* STYLING ELEMENTS */
+
+    firstBox.style.color = "red";
+    firstBox.classList.add("active");
+
+
+    /* CREATING & ADDING ELEMENTS */
+
+    const newDiv = document.createElement("div");
+    newDiv.textContent = "Box 3 (new)";
+    newDiv.classList.add("box");
+
+    document.body.appendChild(newDiv);
+
+
+    /* REMOVING ELEMENT */
+
+    // Hapus box kedua setelah 3 detik
+    setTimeout(() => {
+      if (boxes[1]) {
+        boxes[1].remove();
+        console.log("Box 2 removed");
+      }
+    }, 3000);
+
+
+    /* EVENT LISTENER */
+
+    const btn = document.getElementById("btn");
+
+    btn.addEventListener("click", () => {
+      alert("Button clicked!");
+      title.style.color = "blue";
+    });
+
+
+    /* EVENT OBJECT */
+
+    document.addEventListener("mousemove", (event) => {
+      // jangan log terus biar tidak spam
+      if (event.clientX < 100 && event.clientY < 100) {
+        console.log("Mouse near top-left corner");
+      }
+    });
+
+
+    /*
+    ====================================================
+    KESIMPULAN
+    ====================================================
+    - DOM = representasi HTML dalam bentuk object
+    - Bisa select, ubah, tambah, hapus element
+    - Event listener bikin halaman interaktif
+    ====================================================
+    */
+  </script>
+
+</body>
+</html>

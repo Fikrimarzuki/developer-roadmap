@@ -93,12 +93,14 @@ third += " World"
 
 // 9. Bitwise Operators
 console.log("\n\n== 9. Bitwise Operators ==");
-console.log("5 & 1 =", 5 & 1);
-console.log("5 | 1 =", 5 | 1);
-console.log("5 ^ 1 =", 5 ^ 1);
-console.log("~5 =", ~5);
-console.log("5 << 1 =", 5 << 1);
-console.log("5 >> 1 =", 5 >> 1);
+console.log("5 & 1 =", 5 & 1); // AND
+console.log("5 | 1 =", 5 | 1); // OR
+console.log("5 ^ 1 =", 5 ^ 1); // XOR
+console.log("~5 =", ~5); // NOT
+console.log("5 << 1 =", 5 << 1); // LEFT SHIFT
+console.log("5 >> 1 =", 5 >> 1); // RIGHT SHIFT
+console.log("5 >>> 2 =", 5 >>> 2); // ZERO-FILL RIGHT SHIFT
+
 
 
 
