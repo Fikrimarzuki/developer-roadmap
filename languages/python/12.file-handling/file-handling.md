@@ -123,7 +123,7 @@ with open("data.csv") as f:
 with open("out.csv", "w", newline="") as f:
   writer = csv.writer(f)
   writer.writerow(["name", "age"])
-  writer.writerow(["fikri", 25])
+  writer.writerow(["Pythonia", 25])
 ```
 
 

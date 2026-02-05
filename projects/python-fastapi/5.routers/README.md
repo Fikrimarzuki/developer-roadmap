@@ -37,8 +37,8 @@ project/
 [
   {
     "id": 1,
-    "name": "Fikri",
-    "email": "fikri@mail.com",
+    "name": "Pythonia",
+    "email": "pythonia@mail.com",
     "is_active": true
   }
 ]

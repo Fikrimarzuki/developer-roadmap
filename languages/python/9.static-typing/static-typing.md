@@ -159,14 +159,14 @@ class User(BaseModel):
 ```
 ### Input
 ```python
-u = User(id="1", name="Fikri")
+u = User(id="1", name="Pythonia")
 print(u)
 ```
 Pydantic otomatis konversi "1" menjadi 1.
 
 ### Jika invalid
 ```python
-User(id="abc", name="Fikri")
+User(id="abc", name="Pythonia")
 ```
 Error:
 ```python

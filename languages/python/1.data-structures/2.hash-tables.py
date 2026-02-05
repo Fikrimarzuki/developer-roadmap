@@ -41,7 +41,7 @@ Value:  [ ]    [ ]    [ ]   ["name":"Budi"] [ ]
 # Python menggunakan chaining
 """
 Index 3:
-["name":"Fikri"] -> ["email":"fikri@email.com"] -> None
+["name":"pythonia"] -> ["email":"pythonia@email.com"] -> None
 Bentuknya seperti Linked List di dalam Hash Table
 """
 
@@ -82,22 +82,22 @@ def get(self, key):
 
 # Demo
 ht = HashTable()
-ht.insert("name", "Fikri")
+ht.insert("name", "Pythonia")
 ht.insert("age", 25)
 
-print(ht.get("name"))  # Fikri
+print(ht.get("name"))  # Pythonia
 print(ht.get("age"))   # 25
 
 
 # HASH TABLE DIGUNAKAN DALAM
 # Python dictionary
-# {"name": "Fikri"}
+# {"name": "Pythonia"}
 
 # JSON
 # JSON → convert ke dictionary di Python.
 
 # Cache (Redis uses Hash Table)
-# "user:10" → {name:"Fikri", age:25}
+# "user:10" → {name:"Pythonia", age:25}
 
 # Routing table
 # API endpoint

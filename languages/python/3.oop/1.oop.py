@@ -24,7 +24,7 @@ class Person:
     self.name = name
     self.age = age
 
-p1 = Person("Fikri", 25)
+p1 = Person("Pythonia", 25)
 print(p1.name)
 print(p1.age)
 
@@ -37,7 +37,7 @@ class Person:
   def greet(self):
     print(f"Hello, my name is {self.name}")
 
-p = Person("Fikri")
+p = Person("Pythonia")
 p.greet()
 
 # self adalah reference ke object itu sendiri

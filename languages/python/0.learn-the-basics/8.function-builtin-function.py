@@ -61,7 +61,7 @@ def user_info(**data):
 
 user_info(name="Pythonia", age=25, active=True)
 # Output
-# {'name': 'Fikri', 'age': 25, 'active': True}
+# {'name': 'Pythonia', 'age': 25, 'active': True}
 
 
 # PASSING FUNCTION AS ARGUMENT

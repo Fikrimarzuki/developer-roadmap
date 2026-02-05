@@ -11,7 +11,7 @@ print(square(5))  # 25
 
 # Contoh sorting dengan lambda:
 users = [
-  {"name": "fikri", "age": 25},
+  {"name": "pythonia", "age": 25},
   {"name": "budi", "age": 30}
 ]
 sorted_users = sorted(users, key=lambda u: u["age"])
