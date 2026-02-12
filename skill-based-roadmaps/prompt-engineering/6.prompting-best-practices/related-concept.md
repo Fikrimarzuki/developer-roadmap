@@ -1,0 +1,18 @@
+# PROMPTING BEST PRACTICES
+
+## Related Concept
+- Provide few-shot examples for the structure or output style you need.
+- Keep your prompts short and concise.
+- Ask for structured output if it helps (e.g., JSON, XML, Markdown, CSV, etc).
+- Use variables / placeholders in your prompts for easier configuration.
+- Prioritize giving clearer instructions over adding too many constraints.
+- Control the maximum output length.
+- Experiment with input formats and writing styles.
+- Tune sampling (temperature, top-k, top-p) for determinism vs creativity.
+- Guard against prompt injection; sanitize user text.
+- Automate evaluation, integrate unit tests for outputs.
+- Document and track prompt versions.
+- Optimize for latency and cost in production pipelines.
+- Document decisions, failures, and learnings for future devs.
+- Delimit different sections with triple backticks or XML tags.
+
